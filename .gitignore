@@ -1,0 +1,34 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/.terraform.lock.hcl
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Audio files (may be large)
+# Remove this line if you want to commit audio files
+audio/*.mp3
+audio/*.wav
+audio/*.ogg
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
