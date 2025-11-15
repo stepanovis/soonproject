@@ -1,0 +1,161 @@
+{
+  "paragraphs": [
+    {
+      "sentences": [
+        {
+          "text": "This is a story about the life we don't live.",
+          "delay": 0,
+          "typingSpeed": 50
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "Every time we say \"soon,\" we postpone our happiness to the future.",
+          "delay": 1200,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Happiness that could be with us today.",
+          "delay": 800,
+          "typingSpeed": 50
+        },
+        {
+          "text": "We choose waiting over living.",
+          "delay": 1000,
+          "typingSpeed": 60
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "Soon I'll tell her \"I love you.\"",
+          "delay": 1500,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Soon I'll call my parents.",
+          "delay": 600,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Soon I'll learn that language.",
+          "delay": 600,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Soon I'll travel to that place.",
+          "delay": 600,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Soon I'll start my project.",
+          "delay": 600,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Soon I'll finally live.",
+          "delay": 700,
+          "typingSpeed": 60
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "Soon may never come.",
+          "delay": 2000,
+          "typingSpeed": 70
+        },
+        {
+          "text": "Never.",
+          "delay": 1500,
+          "typingSpeed": 100
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "If you don't live now.",
+          "delay": 2500,
+          "typingSpeed": 60
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "Take ONE thing now and do it.",
+          "delay": 1800,
+          "typingSpeed": 55
+        },
+        {
+          "text": "Your time is now.",
+          "delay": 1000,
+          "typingSpeed": 60
+        },
+        {
+          "text": "Your life is now.",
+          "delay": 800,
+          "typingSpeed": 60
+        },
+        {
+          "text": "Not tomorrow.",
+          "delay": 1000,
+          "typingSpeed": 70
+        },
+        {
+          "text": "Now.",
+          "delay": 800,
+          "typingSpeed": 100
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "It's hard to change without support.",
+          "delay": 2000,
+          "typingSpeed": 50
+        },
+        {
+          "text": "X people already left their voice of support in the SOON blockchain.",
+          "delay": 1000,
+          "typingSpeed": 50
+        },
+        {
+          "text": "They shared this project to help others stop waiting.",
+          "delay": 800,
+          "typingSpeed": 50
+        },
+        {
+          "text": "To make the world better.",
+          "delay": 700,
+          "typingSpeed": 55
+        },
+        {
+          "text": "To make us better.",
+          "delay": 600,
+          "typingSpeed": 55
+        },
+        {
+          "text": "To make you better.",
+          "delay": 600,
+          "typingSpeed": 60
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "Will you join us now?",
+          "delay": 1500,
+          "typingSpeed": 60
+        }
+      ]
+    }
+  ]
+}

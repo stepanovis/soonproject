@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="title-container">
+        <h1 class="main-title">
+            <span id="soon-text">SOON</span>
+            <span id="dot-placeholder-1" class="dot-placeholder">.</span>
+            <span id="never-text">NEVER</span>
+            <span id="dot-placeholder-2" class="dot-placeholder">.</span>
+            <span id="today-text">TODAY</span>
+        </h1>
+        <span id="moving-dot" class="moving-dot">.</span>
+    </div>
+
+    <div class="typing-container" id="typing-container">
+        <!-- Sentences will be typed here -->
+    </div>
+
+    <div id="button-container">
+        <!-- Button will appear here -->
+    </div>
+
+    <footer id="footer">
+        <p id="holders-count">Loading...</p>
+    </footer>
+
+    <script type="module">
+        import { initDotAnimation } from './dot-animation.js';
+        import { initApp } from './main.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initDotAnimation();
+            initApp();
+        });
+    </script>
+</body>
+</html>
