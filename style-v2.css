@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+.title-container {
+    position: relative;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 120px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#soon-text {
+    transition: all 0.5s ease;
+}
+
+#soon-text.strikethrough {
+    text-decoration: line-through;
+    text-decoration-thickness: 4px;
+    opacity: 0.5;
+}
+
+.today-addition {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20px);
+    transition: all 0.8s ease;
+}
+
+.today-addition.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 2rem;
+}
+
+.typing-container {
+    width: 100%;
+    max-width: 800px;
+    min-height: 500px;
+}
+
+.typing-container p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.typing-container p.faded {
+    opacity: 0.6;
+}
+
+.typing-container p.emphasis {
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+
+.typing-container p.big-emphasis {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: #fff;
+    margin-left: 3px;
+    animation: blink 0.7s infinite;
+    vertical-align: baseline;
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+#button-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2rem;
+    text-align: left;
+    min-height: 80px;
+}
+
+.button-wrapper {
+    display: inline-block;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.button-wrapper.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease;
+}
+
+.final-button {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 16px 32px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.05em;
+}
+
+.final-button:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.button-subtext {
+    margin-top: 0.8rem;
+    font-size: 14px;
+    opacity: 0.7;
+    letter-spacing: 0.02em;
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    opacity: 0.6;
+    width: 100%;
+    text-align: center;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 60px;
+    }
+
+    .typing-container p {
+        font-size: 18px;
+    }
+
+    .typing-container p.emphasis {
+        font-size: 24px;
+    }
+
+    .typing-container p.big-emphasis {
+        font-size: 36px;
+    }
+
+    .final-button {
+        font-size: 18px;
+        padding: 14px 28px;
+    }
+}
