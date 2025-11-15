@@ -41,22 +41,22 @@
           "typingSpeed": 50
         },
         {
-          "text": "Soon I'll learn that language.",
+          "text": "Learn that language.",
           "delay": 600,
           "typingSpeed": 50
         },
         {
-          "text": "Soon I'll travel to that place.",
+          "text": "Travel to a new place.",
           "delay": 600,
           "typingSpeed": 50
         },
         {
-          "text": "Soon I'll start my project.",
+          "text": "Start my project.",
           "delay": 600,
           "typingSpeed": 50
         },
         {
-          "text": "Soon I'll finally live.",
+          "text": "And start a new life.",
           "delay": 700,
           "typingSpeed": 60
         }
@@ -73,11 +73,7 @@
           "text": "Never.",
           "delay": 1500,
           "typingSpeed": 100
-        }
-      ]
-    },
-    {
-      "sentences": [
+        },
         {
           "text": "If you don't live now.",
           "delay": 2500,
@@ -88,17 +84,17 @@
     {
       "sentences": [
         {
-          "text": "Take ONE thing now and do it.",
+          "text": "Just take ONE thing and do it today.",
           "delay": 1800,
           "typingSpeed": 55
         },
         {
-          "text": "Your time is now.",
+          "text": "Your time is today.",
           "delay": 1000,
           "typingSpeed": 60
         },
         {
-          "text": "Your life is now.",
+          "text": "Your life is today.",
           "delay": 800,
           "typingSpeed": 60
         },
@@ -108,7 +104,7 @@
           "typingSpeed": 70
         },
         {
-          "text": "Now.",
+          "text": "Today.",
           "delay": 800,
           "typingSpeed": 100
         }
@@ -122,12 +118,12 @@
           "typingSpeed": 50
         },
         {
-          "text": "X people already left their voice of support in the SOON blockchain.",
+          "text": "We've created this pump.fun token as a sign or symbol of support.",
           "delay": 1000,
           "typingSpeed": 50
         },
         {
-          "text": "They shared this project to help others stop waiting.",
+          "text": "The more we hold, the more people can see that they're not alone in their aspiration.",
           "delay": 800,
           "typingSpeed": 50
         },
@@ -142,7 +138,7 @@
           "typingSpeed": 55
         },
         {
-          "text": "To make you better.",
+          "text": "To make life better.",
           "delay": 600,
           "typingSpeed": 60
         }
@@ -151,7 +147,7 @@
     {
       "sentences": [
         {
-          "text": "Will you join us now?",
+          "text": "Join us to share your voice",
           "delay": 1500,
           "typingSpeed": 60
         }
