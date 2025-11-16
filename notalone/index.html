@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notalone.you</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff;
+            color: #000;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 8rem;
+        }
+
+        .logo {
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .tagline {
+            font-size: 22px;
+            opacity: 0.7;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .word-carousel {
+            position: relative;
+            width: 100%;
+            height: 120px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .word-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.05em;
+        }
+
+        .left-part, .right-part {
+            position: relative;
+            min-width: 1.5em;
+            height: 1em;
+            display: flex;
+            align-items: center;
+        }
+
+        .left-part {
+            justify-content: flex-end;
+        }
+
+        .right-part {
+            justify-content: flex-start;
+        }
+
+        .word-part {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .word-part.active {
+            opacity: 1;
+        }
+
+        .left-part .word-part {
+            right: 0;
+        }
+
+        .right-part .word-part {
+            left: 0;
+        }
+
+        .circle {
+            width: 1.2em;
+            height: 1em;
+            flex-shrink: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle-left, .circle-right {
+            width: 0.8em;
+            height: 0.8em;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .circle-left {
+            background-color: rgba(255, 71, 133, 0.7); /* Ярко-розовый */
+            left: 0;
+        }
+
+        .circle-right {
+            background-color: rgba(64, 156, 255, 0.7); /* Ярко-голубой */
+            right: 0;
+        }
+
+        .section {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            padding-bottom: 6rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section-header {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+
+        .section-number {
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            line-height: 1.3;
+        }
+
+        .section-content {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-content strong {
+            font-weight: 600;
+        }
+
+        .section-content ol,
+        .section-content ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .section-content li {
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+        }
+
+        .section-content li:last-child {
+            margin-bottom: 0;
+        }
+
+        .roadmap-item {
+            margin-bottom: 3rem;
+        }
+
+        .roadmap-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .roadmap-item h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .roadmap-item ul {
+            margin-top: 1rem;
+        }
+
+        .subsection {
+            margin-top: 3rem;
+        }
+
+        .subsection h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        footer {
+            margin-top: 8rem;
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            opacity: 0.5;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+        }
+
+        footer img {
+            width: 120px;
+            height: auto;
+            opacity: 0.6;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 2rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 48px;
+            }
+
+            .tagline {
+                font-size: 18px;
+            }
+
+            header {
+                margin-bottom: 4rem;
+            }
+
+            .section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-bottom: 4rem;
+                padding-bottom: 4rem;
+            }
+
+            .section-header {
+                position: static;
+            }
+
+            .section-number {
+                font-size: 12px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .section-content {
+                font-size: 16px;
+            }
+
+            .roadmap-item h3 {
+                font-size: 18px;
+            }
+
+            .word-carousel {
+                height: 80px;
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="word-carousel">
+                <div class="word-container">
+                    <div class="left-part">
+                        <span class="word-part active" data-index="0">Y</span>
+                        <span class="word-part" data-index="1">N</span>
+                        <span class="word-part" data-index="2">AL</span>
+                    </div>
+                    <span class="circle">
+                        <span class="circle-left"></span>
+                        <span class="circle-right"></span>
+                    </span>
+                    <div class="right-part">
+                        <span class="word-part active" data-index="0">U</span>
+                        <span class="word-part" data-index="1">T</span>
+                        <span class="word-part" data-index="2">NE</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <div class="section-title">Concept</div>
+            </div>
+            <div class="section-content">
+                <p>
+                    The project launches a series of thematic tokens, each representing a specific social idea or value. It is a platform where everyone can find views that resonate with them and become part of their growth, influence, and story.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <div class="section-title">Philosophy</div>
+            </div>
+            <div class="section-content">
+                <p>
+                    We start from a simple principle: words are cheap. In a world of information noise, only action has true value.
+                </p>
+                <p>
+                    Our mission is to give people a tool for genuine expression. We believe the only voice that cannot be ignored is one backed by action. Even a minimal financial contribution to an idea is a tangible act of support that speaks louder than any declaration. "notalone.you" is designed to separate the signal from the noise and reveal which ideas truly matter to people.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <div class="section-title">Flow</div>
+            </div>
+            <div class="section-content">
+                <p>The process is built on four transparent stages:</p>
+                <ol>
+                    <li><strong>Issuance:</strong> We launch a token dedicated to a specific social concept (e.g., "soon" — about the value of the present moment).</li>
+                    <li><strong>Support:</strong> People who share the idea support it by acquiring the token.</li>
+                    <li><strong>Analysis:</strong> We collect and analyze anonymized data on token activity and distribution.</li>
+                    <li><strong>Visualization:</strong> Based on this data, we create a "Value Map" — a clear reflection of which ideas resonate most with the community.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <div class="section-title">Roadmap</div>
+            </div>
+            <div class="section-content">
+                <div class="roadmap-item">
+                    <h3>MOVE 1: Launch and Community Building</h3>
+                    <ul>
+                        <li>Issuance of the first token and its integration with key DeFi platforms (pump.fun, Dexscreener).</li>
+                        <li>Establishment and growth of community hubs on Discord and Telegram.</li>
+                    </ul>
+                </div>
+                <div class="roadmap-item">
+                    <h3>MOVE 2: Technology Stack Development</h3>
+                    <ul>
+                        <li>Launch of a web platform for each token, allowing participants to share opinions and stories.</li>
+                        <li>Implementation of a "story generator" — a tool that contextualizes and explains each social idea.</li>
+                        <li>Creation of a notification system for subscribers about future launches.</li>
+                        <li>Implementation of personal accounts linked to users' crypto wallets.</li>
+                    </ul>
+                </div>
+                <div class="roadmap-item">
+                    <h3>MOVE 3: Ecosystem Scaling</h3>
+                    <ul>
+                        <li>Launch of subsequent tokens with new social concepts.</li>
+                        <li>Integration with popular social media platforms to expand reach.</li>
+                    </ul>
+                </div>
+                <div class="roadmap-item">
+                    <h3>MOVE 4: The Public "Value Map"</h3>
+                    <ul>
+                        <li>Launch of the interactive "Value Map" — the project's flagship product.</li>
+                        <li>Providing public access to real-time analytics and data.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <div class="section-title">Investments</div>
+            </div>
+            <div class="section-content">
+                <p>
+                    The project's economic model is based not just on investment, but on a contribution to the long-term stability of the entire ecosystem.
+                </p>
+
+                <div class="subsection">
+                    <h3>The Core Mechanism:</h3>
+                    <p>
+                        <strong>30% of the fees</strong> from trading operations on <em>all</em> social tokens are used to buy back the ecosystem's core token — <strong>YNA (You Not Alone)</strong>.
+                    </p>
+                </div>
+
+                <div class="subsection">
+                    <h3>A Guarantee of Long-Term Growth:</h3>
+                    <p>
+                        All YNA tokens acquired this way are <strong>locked for 5 years</strong>. We commit not to sell them during this period.
+                    </p>
+                    <p>This creates a powerful dual effect:</p>
+                    <ol>
+                        <li><strong>Constant Demand:</strong> It ensures continuous buying pressure on the YNA token, fostering its organic value growth.</li>
+                        <li><strong>Long-Term Confidence:</strong> The five-year lock is our public guarantee of a long-term vision and commitment to the project. It is the foundation that provides stability and predictability for all ecosystem participants.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <img src="../media/Logo.svg" alt="notalone.you logo">
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const leftParts = document.querySelectorAll('.left-part .word-part');
+            const rightParts = document.querySelectorAll('.right-part .word-part');
+            let currentIndex = 0;
+
+            function switchWord() {
+                // Убираем active класс с текущих частей
+                leftParts[currentIndex].classList.remove('active');
+                rightParts[currentIndex].classList.remove('active');
+
+                // Переходим к следующему слову
+                currentIndex = (currentIndex + 1) % leftParts.length;
+
+                // Добавляем active класс к новым частям
+                leftParts[currentIndex].classList.add('active');
+                rightParts[currentIndex].classList.add('active');
+            }
+
+            // Меняем слово каждые 2 секунды
+            setInterval(switchWord, 2000);
+        });
+    </script>
+</body>
+</html>

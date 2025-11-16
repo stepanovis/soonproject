@@ -1,0 +1,34 @@
+coin name: soon
+ticker: soon
+description: first page from the notalone.you social project. This token. We reinvest 30% of fees earned each week, to support the idea. Let's be happy now. Not soon.
+
+social-links
+website: soon.notalone.you
+
+
+
+-----
+
+
+Так, я заложил страничку, думаю надо сделать одностраничный сайт с блоками объясняющими все. Что-то вроде двухколоночной страницы, где слева - заголовок - справа текст, между блоками вниз отступы. Поняли идею?
+
+
+---
+суть в том, что я делаю проект notalone.you в рамках которого запускаю токены с разными социальными посылами каждый. например soon - о том, что надо перестать откладывать свою жизнь на будущее. или alpha - про то, что ждет альф и про их эмоциональные теперь уже переживания.
+
+в будущем, я хотел бы сделать по каждому тикеру визуальный map насколько людям важны те или иные тезисы. исходя из того, как они голосуют за эти тезисы деньгами.
+Вы сказали:
+Сейчас я хочу просто попробовать запустить soon токен без зонтика и без всего остального и посмотреть как будт работать.
+
+coin name: soon
+ticker: soon
+description: first page from the notalone.you social project. This token. We reinvest 30% of fees earned each week, to support the idea. Let's be happy now. Not soon.
+
+social-links
+website: soon.notalone.you
+
+Пока у меня так но с description явно надо поработать.
+Вы сказали:
+сайт noalone.you пока тоже ничего не показывает. Думаешь лучше сделать его тоже сначала, чтобы можно было посмотреть хотбы визитку с объяснением преокта? Типа сделать хотябы две странички?
+Вы сказали:
+Как тебе такое лого?
