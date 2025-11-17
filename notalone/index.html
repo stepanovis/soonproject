@@ -4,302 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>notalone.you</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #fff;
-            color: #000;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            line-height: 1.7;
-            padding: 4rem 2rem;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 8rem;
-        }
-
-        .logo {
-            font-size: 72px;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            margin-bottom: 1.5rem;
-        }
-
-        .tagline {
-            font-size: 22px;
-            opacity: 0.7;
-            font-weight: 400;
-            letter-spacing: 0.01em;
-        }
-
-        .word-carousel {
-            position: relative;
-            width: 100%;
-            height: 120px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 72px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-        }
-
-        .word-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.05em;
-        }
-
-        .left-part, .right-part {
-            position: relative;
-            min-width: 1.5em;
-            height: 1em;
-            display: flex;
-            align-items: center;
-        }
-
-        .left-part {
-            justify-content: flex-end;
-        }
-
-        .right-part {
-            justify-content: flex-start;
-        }
-
-        .word-part {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .word-part.active {
-            opacity: 1;
-        }
-
-        .left-part .word-part {
-            right: 0;
-        }
-
-        .right-part .word-part {
-            left: 0;
-        }
-
-        .circle {
-            width: 1.2em;
-            height: 1em;
-            flex-shrink: 0;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .circle-left, .circle-right {
-            width: 0.8em;
-            height: 0.8em;
-            border-radius: 50%;
-            position: absolute;
-        }
-
-        .circle-left {
-            background-color: rgba(255, 71, 133, 0.7); /* Ярко-розовый */
-            left: 0;
-        }
-
-        .circle-right {
-            background-color: rgba(64, 156, 255, 0.7); /* Ярко-голубой */
-            right: 0;
-        }
-
-        .section {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 4rem;
-            margin-bottom: 6rem;
-            padding-bottom: 6rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            align-items: start;
-        }
-
-        .section:last-of-type {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .section-header {
-            position: sticky;
-            top: 2rem;
-            height: fit-content;
-        }
-
-        .section-number {
-            font-size: 14px;
-            letter-spacing: 0.1em;
-            opacity: 0.5;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title {
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            line-height: 1.3;
-        }
-
-        .section-content {
-            font-size: 18px;
-            line-height: 1.8;
-            padding-top: 2.1rem;
-        }
-
-        .section-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .section-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .section-content strong {
-            font-weight: 600;
-        }
-
-        .section-content ol,
-        .section-content ul {
-            margin: 1.5rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .section-content li {
-            margin-bottom: 1rem;
-            padding-left: 0.5rem;
-        }
-
-        .section-content li:last-child {
-            margin-bottom: 0;
-        }
-
-        .roadmap-item {
-            margin-bottom: 3rem;
-        }
-
-        .roadmap-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .roadmap-item h3 {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.01em;
-        }
-
-        .roadmap-item ul {
-            margin-top: 1rem;
-        }
-
-        .subsection {
-            margin-top: 3rem;
-        }
-
-        .subsection h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.01em;
-        }
-
-        footer {
-            margin-top: 8rem;
-            text-align: center;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            opacity: 0.5;
-            font-size: 14px;
-            letter-spacing: 0.05em;
-        }
-
-        footer img {
-            width: 120px;
-            height: auto;
-            opacity: 0.6;
-        }
-
-        /* Mobile responsive */
-        @media (max-width: 768px) {
-            body {
-                padding: 2rem 1.5rem;
-            }
-
-            .logo {
-                font-size: 48px;
-            }
-
-            .tagline {
-                font-size: 18px;
-            }
-
-            header {
-                margin-bottom: 4rem;
-            }
-
-            .section {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                margin-bottom: 4rem;
-                padding-bottom: 4rem;
-            }
-
-            .section-header {
-                position: static;
-            }
-
-            .section-number {
-                font-size: 12px;
-            }
-
-            .section-title {
-                font-size: 24px;
-            }
-
-            .section-content {
-                font-size: 16px;
-            }
-
-            .roadmap-item h3 {
-                font-size: 18px;
-            }
-
-            .word-carousel {
-                height: 80px;
-                font-size: 48px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="word-carousel">
+    <header class="fixed-header">
+        <div class="header-content">
+            <div class="header-logo">
+                <div class="footer-circle color-1 pos-0"></div>
+                <div class="footer-circle color-2 pos-1"></div>
+                <div class="footer-circle color-3 pos-3"></div>
+                <div class="footer-circle color-4 pos-6"></div>
+                <div class="footer-circle color-5 pos-9"></div>
+            </div>
+            <div class="header-word-carousel">
                 <div class="word-container">
                     <div class="left-part">
                         <span class="word-part active" data-index="0">Y</span>
@@ -317,148 +34,293 @@
                     </div>
                 </div>
             </div>
-        </header>
-
-        <div class="section">
-            <div class="section-header">
-                <div class="section-number">01</div>
-                <div class="section-title">Concept</div>
-            </div>
-            <div class="section-content">
-                <p>
-                    The project launches a series of thematic tokens, each representing a specific social idea or value. It is a platform where everyone can find views that resonate with them and become part of their growth, influence, and story.
-                </p>
-            </div>
         </div>
+    </header>
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-number">02</div>
-                <div class="section-title">Philosophy</div>
-            </div>
-            <div class="section-content">
-                <p>
-                    We start from a simple principle: words are cheap. In a world of information noise, only action has true value.
-                </p>
-                <p>
-                    Our mission is to give people a tool for genuine expression. We believe the only voice that cannot be ignored is one backed by action. Even a minimal financial contribution to an idea is a tangible act of support that speaks louder than any declaration. "notalone.you" is designed to separate the signal from the noise and reveal which ideas truly matter to people.
-                </p>
-            </div>
-        </div>
+    <main>
+        <section class="hero-section">
+            <h1 class="hero-title">A social crypto project<br>that values your opinion</h1>
+        </section>
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-number">03</div>
-                <div class="section-title">Flow</div>
-            </div>
-            <div class="section-content">
-                <p>The process is built on four transparent stages:</p>
-                <ol>
-                    <li><strong>Issuance:</strong> We launch a token dedicated to a specific social concept (e.g., "soon" — about the value of the present moment).</li>
-                    <li><strong>Support:</strong> People who share the idea support it by acquiring the token.</li>
-                    <li><strong>Analysis:</strong> We collect and analyze anonymized data on token activity and distribution.</li>
-                    <li><strong>Visualization:</strong> Based on this data, we create a "Value Map" — a clear reflection of which ideas resonate most with the community.</li>
-                </ol>
-            </div>
-        </div>
+        <div class="container">
 
-        <div class="section">
-            <div class="section-header">
-                <div class="section-number">04</div>
-                <div class="section-title">Roadmap</div>
-            </div>
-            <div class="section-content">
-                <div class="roadmap-item">
-                    <h3>MOVE 1: Launch and Community Building</h3>
-                    <ul>
-                        <li>Issuance of the first token and its integration with key DeFi platforms (pump.fun, Dexscreener).</li>
-                        <li>Establishment and growth of community hubs on Discord and Telegram.</li>
-                    </ul>
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">
+                        <div class="circle-group">
+                            <div class="euler-circle color-1 pos-0"></div>
+                        </div>
+                    </div>
+                    <div class="section-title">Concept</div>
                 </div>
-                <div class="roadmap-item">
-                    <h3>MOVE 2: Technology Stack Development</h3>
-                    <ul>
-                        <li>Launch of a web platform for each token, allowing participants to share opinions and stories.</li>
-                        <li>Implementation of a "story generator" — a tool that contextualizes and explains each social idea.</li>
-                        <li>Creation of a notification system for subscribers about future launches.</li>
-                        <li>Implementation of personal accounts linked to users' crypto wallets.</li>
-                    </ul>
-                </div>
-                <div class="roadmap-item">
-                    <h3>MOVE 3: Ecosystem Scaling</h3>
-                    <ul>
-                        <li>Launch of subsequent tokens with new social concepts.</li>
-                        <li>Integration with popular social media platforms to expand reach.</li>
-                    </ul>
-                </div>
-                <div class="roadmap-item">
-                    <h3>MOVE 4: The Public "Value Map"</h3>
-                    <ul>
-                        <li>Launch of the interactive "Value Map" — the project's flagship product.</li>
-                        <li>Providing public access to real-time analytics and data.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-header">
-                <div class="section-number">05</div>
-                <div class="section-title">Investments</div>
-            </div>
-            <div class="section-content">
-                <p>
-                    The project's economic model is based not just on investment, but on a contribution to the long-term stability of the entire ecosystem.
-                </p>
-
-                <div class="subsection">
-                    <h3>The Core Mechanism:</h3>
+                <div class="section-content">
                     <p>
-                        <strong>30% of the fees</strong> from trading operations on <em>all</em> social tokens are used to buy back the ecosystem's core token — <strong>YNA (You Not Alone)</strong>.
+                        Series of thematic tokens, each representing a specific social idea or value. <br> Place where everyone can find views that resonate with them and become part of their growth, influence, and story.
                     </p>
                 </div>
+            </section>
 
-                <div class="subsection">
-                    <h3>A Guarantee of Long-Term Growth:</h3>
-                    <p>
-                        All YNA tokens acquired this way are <strong>locked for 5 years</strong>. We commit not to sell them during this period.
-                    </p>
-                    <p>This creates a powerful dual effect:</p>
-                    <ol>
-                        <li><strong>Constant Demand:</strong> It ensures continuous buying pressure on the YNA token, fostering its organic value growth.</li>
-                        <li><strong>Long-Term Confidence:</strong> The five-year lock is our public guarantee of a long-term vision and commitment to the project. It is the foundation that provides stability and predictability for all ecosystem participants.</li>
-                    </ol>
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">
+                        <div class="circle-group">
+                            <div class="euler-circle color-1 pos-0"></div>
+                            <div class="euler-circle color-2 pos-14"></div>
+                        </div>
+                    </div>
+                    <div class="section-title">Philosophy</div>
                 </div>
-            </div>
+                <div class="section-content">
+                    <p>
+                        Words are cheap. In a world of information noise, <b>only action has true value</b>. Many people claim to have beliefs and opinions, but words alone mean nothing. Here you can take a position and prove it matters to you. With this project we want to reveal the real situation in the world. Each idea is a token. By holding the token you prove you agree and are part of it.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">
+                        <div class="circle-group">
+                            <div class="euler-circle color-1 pos-0"></div>
+                            <div class="euler-circle color-2 pos-14"></div>
+                            <div class="euler-circle color-3 pos-4"></div>
+                        </div>
+                    </div>
+                    <div class="section-title">Flow</div>
+                </div>
+                <div class="section-content">
+                    <p>Each sunday we create one or more new statements with a new token. If you agree with it - just buy some tokens and hold them in your wallet. Share your beliefs, proven by your holdings, on social media or your personal page. </p>
+                    <p>We provide analysis of social opinion power based on holders. Only people who hold tokens for 3+ days are included in the analysis. Pure speculators are filtered out. </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">
+                        <div class="circle-group">
+                            <div class="euler-circle color-1 pos-0"></div>
+                            <div class="euler-circle color-2 pos-14"></div>
+                            <div class="euler-circle color-3 pos-4"></div>
+                            <div class="euler-circle color-4 pos-7"></div>
+                        </div>
+                    </div>
+                    <div class="section-title">Financials</div>
+                </div>
+                <div class="section-content">
+                    <h3>Investments</h3>
+                        <p>
+                            Invest in <strong>YNA (You Not Alone)</strong> token and earn returns. <strong>30% of the fees</strong> from trading operations on <em>all</em> social tokens are used to buy back the ecosystem's core token — <strong>YNA (You Not Alone)</strong>.
+                            <br> All YNA tokens acquired this way are locked for 5 years. We are committed to not selling them during this period, dedicating the accumulated value to social initiatives.
+                        </p>
+                    <p>
+                        The project's economic model is based not just on investment, but on a contribution to the long-term stability of the entire ecosystem.
+                    </p>
+                    <h3>Trading</h3>
+                        <p>
+                            Subscribe to our social channels and receive notifications for each launch. Buy early at launch to benefit from price appreciation.
+                        </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">
+                        <div class="circle-group">
+                            <div class="euler-circle color-1 pos-0"></div>
+                            <div class="euler-circle color-2 pos-14"></div>
+                            <div class="euler-circle color-3 pos-4"></div>
+                            <div class="euler-circle color-4 pos-7"></div>
+                            <div class="euler-circle color-5 pos-10"></div>
+                        </div>
+                    </div>
+                    <div class="section-title">Roadmap</div>
+                </div>
+                <div class="section-content">
+                    <div class="roadmap-item">
+                        <h3>Content & Community</h3>
+                        <div class="roadmap-cards">
+                            <div class="roadmap-card bg-color-1-trans-25">
+                                <strong>History Wall</strong><br>
+                                Gallery of historical examples and stories that illustrate each social idea with real-world context.
+                            </div>
+                            <div class="roadmap-card bg-color-2-trans-25">
+                                <strong>User Story Wall</strong><br>
+                                Platform where token holders share personal stories connected to the ideas they support.
+                            </div>
+                            <div class="roadmap-card bg-color-3-trans-25">
+                                <strong>Notification System</strong><br>
+                                Multi-channel alerts (Telegram, Discord, Email) for new token launches and community updates.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <h3>User Experience</h3>
+                        <div class="roadmap-cards">
+                            <div class="roadmap-card bg-color-4-trans-25">
+                                <strong>Personal Wallet Profile</strong><br>
+                                Public profile showcasing your values through held tokens, with shareable personal page.
+                            </div>
+                            <div class="roadmap-card bg-color-5-trans-25">
+                                <strong>Find Your People</strong><br>
+                                Discovery tool to connect with others who share your values and hold the same tokens.
+                            </div>
+                            <div class="roadmap-card bg-color-1-trans-25">
+                                <strong>Social Sharing Kit</strong><br>
+                                Beautiful card generator for sharing your beliefs on Twitter, Instagram, and other platforms.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <h3>Analytics & Governance</h3>
+                        <div class="roadmap-cards">
+                            <div class="roadmap-card bg-color-2-trans-25">
+                                <strong>Token Dashboard</strong><br>
+                                Real-time analytics showing holder strength, distribution, and community growth for each token.
+                            </div>
+                            <div class="roadmap-card bg-color-3-trans-25">
+                                <strong>Global Sentence Map</strong><br>
+                                Interactive visualization of all social ideas with analytics showing which values resonate most.
+                            </div>
+                            <div class="roadmap-card bg-color-4-trans-25">
+                                <strong>Community Governance</strong><br>
+                                YNA holders propose and vote on new ideas and tokens to launch in the ecosystem.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">
+                        <div class="circle-group">
+                            <div class="euler-circle color-1 pos-0"></div>
+                            <div class="euler-circle color-2 pos-14"></div>
+                            <div class="euler-circle color-3 pos-4"></div>
+                            <div class="euler-circle color-4 pos-7"></div>
+                            <div class="euler-circle color-5 pos-10"></div>
+                            <div class="euler-circle color-1 pos-12"></div>
+                        </div>
+                    </div>
+                    <div class="section-title">Started Projects</div>
+                </div>
+                <div class="section-content">
+                    <div class="projects-grid">
+                        <div class="project-card upcoming">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <div class="footer-circle project-icon-color-5"></div>
+                                </div>
+                                <div class="project-name">Coming Soon</div>
+                            </div>
+                            <div class="project-description">
+                                New social idea launching this Sunday. Subscribe to get notified and be among the first supporters.
+                            </div>
+                            <div class="project-date">November 22, 2024</div>
+                            <div class="project-links">
+                                <a href="https://t.me/yourenotaloneproject" target="_blank" class="project-link">Get Notified →</a>
+                            </div>
+                        </div>
+                        <div class="project-card upcoming">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <div class="footer-circle project-icon-color-3"></div>
+                                </div>
+                                <div class="project-name">Coming Soon</div>
+                            </div>
+                            <div class="project-description">
+                                New social idea launching this Sunday. Subscribe to get notified and be among the first supporters.
+                            </div>
+                            <div class="project-date">November 29, 2024</div>
+                            <div class="project-links">
+                                <a href="https://t.me/yourenotaloneproject" target="_blank" class="project-link">Get Notified →</a>
+                            </div>
+                        </div>
+                        <div class="project-card upcoming">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <div class="footer-circle project-icon-color-2"></div>
+                                </div>
+                                <div class="project-name">Coming Soon</div>
+                            </div>
+                            <div class="project-description">
+                                New social idea launching this Sunday. Subscribe to get notified and be among the first supporters.
+                            </div>
+                            <div class="project-date">December 6, 2024</div>
+                            <div class="project-links">
+                                <a href="https://t.me/yourenotaloneproject" target="_blank" class="project-link">Get Notified →</a>
+                            </div>
+                        </div>
+                        <div class="project-card upcoming">
+                            <div class="project-header">
+                                <div class="project-icon">
+                                    <div class="footer-circle project-icon-color-4"></div>
+                                </div>
+                                <div class="project-name">Coming Soon</div>
+                            </div>
+                            <div class="project-description">
+                                New social idea launching this Sunday. Subscribe to get notified and be among the first supporters.
+                            </div>
+                            <div class="project-date">December 13, 2024</div>
+                            <div class="project-links">
+                                <a href="https://t.me/yourenotaloneproject" target="_blank" class="project-link">Get Notified →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-number">
+                        <div class="circle-group">
+                            <div class="euler-circle color-1 pos-0"></div>
+                            <div class="euler-circle color-2 pos-14"></div>
+                            <div class="euler-circle color-3 pos-4"></div>
+                            <div class="euler-circle color-4 pos-7"></div>
+                            <div class="euler-circle color-5 pos-10"></div>
+                            <div class="euler-circle color-1 pos-12"></div>
+                            <div class="euler-circle color-2 pos-13"></div>
+                        </div>
+                    </div>
+                    <div class="section-title">Join Community</div>
+                </div>
+                <div class="section-content">
+                    <p class="community-intro">
+                        Connect with like-minded people who share your values. Get updates on new token launches, participate in discussions, and help shape the future of the ecosystem.
+                    </p>
+                    <div class="community-grid">
+                        <a href="#" class="community-card bg-color-3-trans-12">
+                            <div class="community-icon">💬</div>
+                            <div class="community-name">Discord</div>
+                            <div class="community-description">soon</div>
+                        </a>
+                        <a href="https://t.me/yourenotaloneproject" target="_blank" class="community-card bg-color-2-trans-12">
+                            <div class="community-icon">✈️</div>
+                            <div class="community-name">Telegram</div>
+                            <div class="community-description">Get instant updates and announcements</div>
+                        </a>
+                        <a href="#" class="community-card bg-color-1-trans-12">
+                            <div class="community-icon">𝕏</div>
+                            <div class="community-name">Twitter</div>
+                            <div class="community-description">soon</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
+    </main>
 
-        <footer>
-            <img src="../media/Logo.svg" alt="notalone.you logo">
-        </footer>
-    </div>
+    <footer class="fixed-footer">
+        <div class="footer-logo">
+            <div class="footer-circle color-1 pos-0"></div>
+            <div class="footer-circle color-2 pos-2"></div>
+            <div class="footer-circle color-3 pos-5"></div>
+            <div class="footer-circle color-4 pos-8"></div>
+            <div class="footer-circle color-5 pos-11"></div>
+        </div>
+    </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const leftParts = document.querySelectorAll('.left-part .word-part');
-            const rightParts = document.querySelectorAll('.right-part .word-part');
-            let currentIndex = 0;
-
-            function switchWord() {
-                // Убираем active класс с текущих частей
-                leftParts[currentIndex].classList.remove('active');
-                rightParts[currentIndex].classList.remove('active');
-
-                // Переходим к следующему слову
-                currentIndex = (currentIndex + 1) % leftParts.length;
-
-                // Добавляем active класс к новым частям
-                leftParts[currentIndex].classList.add('active');
-                rightParts[currentIndex].classList.add('active');
-            }
-
-            // Меняем слово каждые 2 секунды
-            setInterval(switchWord, 2000);
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

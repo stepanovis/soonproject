@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOON</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1 class="main-title">SOON</h1>
+
+    <div class="typing-container" id="typing-container">
+        <!-- Sentences will be typed here -->
+    </div>
+
+    <div id="button-container">
+        <!-- Button will appear here -->
+    </div>
+
+    <footer>
+        <p>We reinvest 30% of fees earned each week, to support the idea</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const typingContainer = document.getElementById('typing-container');
+            const buttonContainer = document.getElementById('button-container');
+
+            async function fetchData() {
+                try {
+                    const response = await fetch('sentences.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    return data.paragraphs;
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                    typingContainer.innerHTML = '<p>Error loading content.</p>';
+                    return [];
+                }
+            }
+
+            function typeText(element, text, speed) {
+                return new Promise(resolve => {
+                    let i = 0;
+                    function type() {
+                        if (i < text.length) {
+                            element.innerHTML += text.charAt(i);
+                            i++;
+                            setTimeout(type, speed);
+                        } else {
+                            resolve();
+                        }
+                    }
+                    type();
+                });
+            }
+
+            async function startTypingAnimation(paragraphs) {
+                if (!paragraphs || paragraphs.length === 0) {
+                    return; 
+                }
+
+                for (const paragraph of paragraphs) {
+                    const paragraphElement = document.createElement('p');
+                    typingContainer.appendChild(paragraphElement);
+
+                    for (let i = 0; i < paragraph.sentences.length; i++) {
+                        const sentence = paragraph.sentences[i];
+                        await new Promise(resolve => setTimeout(resolve, sentence.delay));
+                        
+                        // Add a space before the new sentence if it's not the first one in the paragraph
+                        if (i > 0) {
+                            paragraphElement.innerHTML += ' ';
+                        }
+                        
+                        await typeText(paragraphElement, sentence.text, sentence.typingSpeed);
+                    }
+                }
+
+            }
+
+            fetchData().then(startTypingAnimation);
+        });
+    </script>
+</body>
+</html>

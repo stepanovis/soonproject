@@ -1,0 +1,157 @@
+{
+  "paragraphs": [
+    {
+      "sentences": [
+        {
+          "text": "This is a story about the life we don't live.",
+          "delay": 0,
+          "typingSpeed": 50
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "Every time we say \"soon,\" we postpone our happiness to the future.",
+          "delay": 1200,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Happiness that could be with us today.",
+          "delay": 800,
+          "typingSpeed": 50
+        },
+        {
+          "text": "We choose waiting over living.",
+          "delay": 1000,
+          "typingSpeed": 60
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "Soon I'll tell her \"I love you.\"",
+          "delay": 1500,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Soon I'll call my parents.",
+          "delay": 600,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Learn that language.",
+          "delay": 600,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Travel to a new place.",
+          "delay": 600,
+          "typingSpeed": 50
+        },
+        {
+          "text": "Start my project.",
+          "delay": 600,
+          "typingSpeed": 50
+        },
+        {
+          "text": "And start a new life.",
+          "delay": 700,
+          "typingSpeed": 60
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "Soon may never come.",
+          "delay": 2000,
+          "typingSpeed": 70
+        },
+        {
+          "text": "Never.",
+          "delay": 1500,
+          "typingSpeed": 100
+        },
+        {
+          "text": "If you don't live now.",
+          "delay": 2500,
+          "typingSpeed": 60
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "Just take ONE thing and do it today.",
+          "delay": 1800,
+          "typingSpeed": 55
+        },
+        {
+          "text": "Your time is today.",
+          "delay": 1000,
+          "typingSpeed": 60
+        },
+        {
+          "text": "Your life is today.",
+          "delay": 800,
+          "typingSpeed": 60
+        },
+        {
+          "text": "Not tomorrow.",
+          "delay": 1000,
+          "typingSpeed": 70
+        },
+        {
+          "text": "Today.",
+          "delay": 800,
+          "typingSpeed": 100
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "It's hard to change without support.",
+          "delay": 2000,
+          "typingSpeed": 50
+        },
+        {
+          "text": "We've created this pump.fun token as a sign or symbol of support.",
+          "delay": 1000,
+          "typingSpeed": 50
+        },
+        {
+          "text": "The more we hold, the more people can see that they're not alone in their aspiration.",
+          "delay": 800,
+          "typingSpeed": 50
+        },
+        {
+          "text": "To make the world better.",
+          "delay": 700,
+          "typingSpeed": 55
+        },
+        {
+          "text": "To make us better.",
+          "delay": 600,
+          "typingSpeed": 55
+        },
+        {
+          "text": "To make life better.",
+          "delay": 600,
+          "typingSpeed": 60
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "text": "Join us to share your voice",
+          "delay": 1500,
+          "typingSpeed": 60
+        }
+      ]
+    }
+  ]
+}

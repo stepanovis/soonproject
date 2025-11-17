@@ -1,0 +1,564 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Color Palette Classes */
+.color-1 { background-color: #3DB257; }
+.color-2 { background-color: #56D0E0; }
+.color-3 { background-color: #7656E0; }
+.color-4 { background-color: #E056D7; }
+.color-5 { background-color: #FF5457; }
+
+.bg-color-1-trans-25 { background-color: rgba(61, 178, 87, 0.25); }
+.bg-color-2-trans-25 { background-color: rgba(86, 208, 224, 0.25); }
+.bg-color-3-trans-25 { background-color: rgba(118, 86, 224, 0.25); }
+.bg-color-4-trans-25 { background-color: rgba(224, 86, 215, 0.25); }
+.bg-color-5-trans-25 { background-color: rgba(255, 84, 87, 0.25); }
+
+.bg-color-1-trans-12 { background-color: rgba(61, 178, 87, 0.12); }
+.bg-color-2-trans-12 { background-color: rgba(86, 208, 224, 0.12); }
+.bg-color-3-trans-12 { background-color: rgba(118, 86, 224, 0.12); }
+
+.project-icon-color-5 { background-color: rgba(255, 84, 87, 0.3); }
+.project-icon-color-3 { background-color: rgba(118, 86, 224, 0.3); }
+.project-icon-color-2 { background-color: rgba(86, 208, 224, 0.3); }
+.project-icon-color-4 { background-color: rgba(224, 86, 215, 0.3); }
+
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    height: 80px;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo {
+    position: relative;
+    height: 18px;
+    width: 48px;
+    flex-shrink: 0;
+}
+
+.header-logo .footer-circle {
+    width: 16px;
+    height: 16px;
+}
+
+.header-word-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    height: 30px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 6rem 2rem 8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem 2rem;
+}
+
+
+.word-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.05em;
+}
+
+.left-part, .right-part {
+    position: relative;
+    min-width: 1.5em;
+    height: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.left-part {
+    justify-content: flex-end;
+}
+
+.right-part {
+    justify-content: flex-start;
+}
+
+.word-part {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.word-part.active {
+    opacity: 1;
+}
+
+.left-part .word-part {
+    right: 0;
+}
+
+.right-part .word-part {
+    left: 0;
+}
+
+.circle {
+    width: 1.2em;
+    height: 1em;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-left, .circle-right {
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circle-left {
+    background-color: rgba(255, 71, 133, 0.7); /* Ярко-розовый */
+    left: 0;
+}
+
+.circle-right {
+    background-color: rgba(64, 156, 255, 0.7); /* Ярко-голубой */
+    right: 0;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: start;
+}
+
+.section:last-of-type {
+    margin-bottom: 0;
+}
+
+.section-header {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.section-number {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.circle-group {
+    display: flex;
+    position: relative;
+    height: 24px;
+    min-width: 75px;
+}
+
+.euler-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.7;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+}
+
+.section-content {
+    font-size: 18px;
+    line-height: 1.8;
+    padding-top: 2.1rem;
+}
+
+.section-content p {
+    margin-bottom: 1.5rem;
+}
+
+.section-content p:last-child {
+    margin-bottom: 0;
+}
+
+.section-content .community-intro {
+    margin-bottom: 2rem;
+}
+
+.section-content strong {
+    font-weight: 600;
+}
+
+.section-content ol,
+.section-content ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.section-content li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.section-content li:last-child {
+    margin-bottom: 0;
+}
+
+.roadmap-item {
+    margin-bottom: 3rem;
+}
+
+.roadmap-item:last-child {
+    margin-bottom: 0;
+}
+
+.roadmap-item h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+}
+
+.roadmap-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.roadmap-card {
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 120px;
+}
+
+.roadmap-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.subsection {
+    margin-top: 3rem;
+}
+
+.subsection h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+}
+
+.footer-logo {
+    display: inline-flex;
+    position: relative;
+    height: 32px;
+    width: 64px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.7;
+}
+
+/* Positioning for circles */
+.pos-0 { left: 0; }
+.pos-1 { left: 8px; }
+.pos-2 { left: 10px; }
+.pos-3 { left: 16px; }
+.pos-4 { left: 19.2px; }
+.pos-5 { left: 20px; }
+.pos-6 { left: 24px; }
+.pos-7 { left: 28.8px; }
+.pos-8 { left: 30px; }
+.pos-9 { left: 32px; }
+.pos-10 { left: 38.4px; }
+.pos-11 { left: 40px; }
+.pos-12 { left: 48px; }
+.pos-13 { left: 57.6px; }
+.pos-14 { left: 9.6px; }
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.project-card {
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-card.upcoming {
+    opacity: 0.6;
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.project-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-icon .footer-circle {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: 0;
+}
+
+.project-name {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.project-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.project-date {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    letter-spacing: 0.01em;
+}
+
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: auto;
+}
+
+.project-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: opacity 0.2s ease;
+}
+
+.project-link:hover {
+    opacity: 0.6;
+}
+
+/* Community Section */
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.community-card {
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.community-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.community-icon {
+    font-size: 48px;
+    line-height: 1;
+}
+
+.community-name {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.community-description {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .fixed-header {
+        height: 70px;
+    }
+
+    .fixed-footer {
+        height: 70px;
+    }
+
+    .header-content {
+        padding: 0 1.5rem;
+    }
+
+    .header-word-carousel {
+        font-size: 18px;
+        height: 28px;
+    }
+
+    .header-logo .footer-circle {
+        width: 14px;
+        height: 14px;
+    }
+
+    .hero-section {
+        padding: 3rem 1.5rem 4rem 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .container {
+        padding: 1.5rem 1.5rem 2rem 1.5rem;
+    }
+
+    .section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .section-header {
+        position: static;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-content {
+        font-size: 16px;
+    }
+
+    .roadmap-item h3 {
+        font-size: 18px;
+    }
+
+    .roadmap-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .community-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
